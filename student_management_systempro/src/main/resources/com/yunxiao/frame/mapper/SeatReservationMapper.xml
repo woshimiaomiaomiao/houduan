@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yunxiao.frame.mapper.SeatReservationMapper">
+
+    <!-- 插入座位预约 -->
+    <insert id="insertSeatReservation" parameterType="SeatReservation">
+        INSERT INTO SeatReservations (studentId, seatId, reservationTime, duration)
+        VALUES (#{studentId}, #{seatId}, #{reservationTime}, #{duration})
+    </insert>
+
+    <!-- 根据ID查询座位预约 -->
+    <select id="selectSeatReservationById" parameterType="Long" resultType="SeatReservation">
+        SELECT * FROM SeatReservations WHERE reservationId = #{id}
+    </select>
+
+    <!-- 更新座位预约 -->
+    <update id="updateSeatReservation" parameterType="SeatReservation">
+        UPDATE SeatReservations SET studentId = #{studentId}, seatId = #{seatId}, reservationTime = #{reservationTime}, duration = #{duration}
+        WHERE reservationId = #{reservationId}
+    </update>
+
+    <!-- 根据ID删除座位预约 -->
+    <delete id="deleteSeatReservation" parameterType="Long">
+        DELETE FROM SeatReservations WHERE reservationId = #{id}
+    </delete>
+
+</mapper>
