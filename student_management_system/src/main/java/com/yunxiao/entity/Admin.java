@@ -5,12 +5,8 @@ public class Admin {
     private String adminId; // 管理员账号
     private String adminPassword; // 管理员密码
 
-    public Admin() {
-    }
-
-    public Admin(String adminName, String adminId, String adminPassword) {
+    public Admin(String adminName, String adminPassword) {
         this.adminName = adminName;
-        this.adminId = adminId;
         this.adminPassword = adminPassword;
     }
 

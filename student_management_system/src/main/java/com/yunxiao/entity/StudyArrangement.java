@@ -1,15 +1,14 @@
 package com.yunxiao.entity;
 
 public class StudyArrangement {
-   private long arrangementId;
-   private String studentId;
-   private String studyTime;
+    private long arrangementId;
+    private String studentId;
+    private String studyTime;
 
     public StudyArrangement() {
     }
 
-    public StudyArrangement(long arrangementId, String studentId, String studyTime) {
-        this.arrangementId = arrangementId;
+    public StudyArrangement(String studentId, String studyTime) {
         this.studentId = studentId;
         this.studyTime = studyTime;
     }

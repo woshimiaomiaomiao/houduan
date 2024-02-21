@@ -4,17 +4,16 @@ import java.time.LocalDateTime;
 
 //学习资料实体类
 public class StudyMaterial {
-   private long materialld;     //材料ID
-   private String title;        //标题
-   private String description;  //描述
-   private long uploaderId;     //上传者ID
-   private String materialPath; //资料链接或路径
+    private long materialld;     //材料ID
+    private String title;        //标题
+    private String description;  //描述
+    private long uploaderId;     //上传者ID
+    private String materialPath; //资料链接或路径
 
     public StudyMaterial() {
     }
 
-    public StudyMaterial(long materialld, String title, String description, long uploaderId, String materialPath) {
-        this.materialld = materialld;
+    public StudyMaterial(String title, String description, long uploaderId, String materialPath) {
         this.title = title;
         this.description = description;
         this.uploaderId = uploaderId;
