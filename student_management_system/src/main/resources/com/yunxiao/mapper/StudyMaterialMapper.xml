@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yunxiao.mapper.StudyMaterialMapper">
+
+    <!-- 插入学习资料 -->
+    <insert id="insertStudyMaterial" parameterType="com.yunxiao.entity.StudyMaterial">
+        INSERT INTO StudyMaterials (title, description, uploaderId, materialPath)
+        VALUES (#{title}, #{description}, #{uploaderId}, #{materialPath})
+    </insert>
+
+    <!-- 根据ID查询学习资料 -->
+    <select id="selectStudyMaterialById" parameterType="Long" resultType="com.yunxiao.entity.StudyMaterial">
+        SELECT * FROM StudyMaterials WHERE materialId = #{id}
+    </select>
+
+    <!-- 更新学习资料 -->
+    <update id="updateStudyMaterial" parameterType="com.yunxiao.entity.StudyMaterial">
+        UPDATE StudyMaterials SET title = #{title}, description = #{description}, uploaderId = #{uploaderId}, materialPath = #{materialPath}
+        WHERE materialId = #{materialId}
+    </update>
+
+    <!-- 根据ID删除学习资料 -->
+    <delete id="deleteStudyMaterial" parameterType="Long">
+        DELETE FROM StudyMaterials WHERE materialId = #{id}
+    </delete>
+
+</mapper>

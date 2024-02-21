@@ -10,6 +10,10 @@ public class Student {
     private String direction; // 方向
     private String awardExperience; // 获奖经历
 
+    public Student(String studentPassword, String studentName) {
+        this.studentPassword = studentPassword;
+        this.studentName = studentName;
+    }
 
     public Student() {
     }

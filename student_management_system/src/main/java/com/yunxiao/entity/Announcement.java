@@ -1,16 +1,15 @@
 package com.yunxiao.entity;
 
 public class Announcement {
-   private long announcementId;  //公告ID
-   private String title;         //标题
-   private String content;       //内容
-   private Long publisherId;     //发布者ID
+    private long announcementId;  //公告ID
+    private String title;         //标题
+    private String content;       //内容
+    private Long publisherId;     //发布者ID
 
     public Announcement() {
     }
 
-    public Announcement(long announcementId, String title, String content, Long publisherId) {
-        this.announcementId = announcementId;
+    public Announcement(String title, String content, Long publisherId) {
         this.title = title;
         this.content = content;
         this.publisherId = publisherId;
