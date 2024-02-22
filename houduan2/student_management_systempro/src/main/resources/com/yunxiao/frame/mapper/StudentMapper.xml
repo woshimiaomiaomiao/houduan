@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yunxiao.frame.mapper.StudentMapper">
+
+
+
+    <!-- 登录学生账号或查询 -->
+    <select id="login" parameterType="map" resultType="Student">
+        SELECT * FROM Students WHERE studentId = #{studentId} AND studentPassword = #{studentPassword}
+    </select>
+
+
+    <!-- 更新学生信息 -->
+    <update id="updateStudent" parameterType="Student">
+
+        update students
+        <set>
+            <if test="studentPassword !=null and studentPassword!=''">
+                studentPassword=#{studentPassword},
+            </if>
+            <if test="studentName !=null and studentName!='' ">
+                studentName=#{studentName},
+            </if>
+            <if test="gender!=null and gender!=''">
+                gender=#{gender},
+            </if>
+            <if test="collegeClass !=null and collegeClass!='' ">
+                collegeClass=#{collegeClass},
+            </if>
+            <if test="period !=null">
+                period=#{period},
+            </if>
+            <if test="direction !=null and direction!='' ">
+                direction=#{direction},
+            </if>
+            <if test="awardExperience !=null and awardExperience!='' ">
+                awardExperience=#{awardExperience}
+            </if>
+        </set>
+        where student_id=#{studentId};
+    </update>
+
+    <!--通过id查询某个同学的详细信息-->
+    <select id="selectStudentInformation" resultType="student">
+        SELECT * FROM Students WHERE studentId = #{studentId};
+    </select>
+
+
+
+</mapper>
