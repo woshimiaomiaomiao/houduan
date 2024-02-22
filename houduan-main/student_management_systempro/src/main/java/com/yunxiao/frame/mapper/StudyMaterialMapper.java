@@ -9,10 +9,14 @@ import java.util.List;
 @Mapper
 public interface StudyMaterialMapper {
     void insertStudyMaterial(StudyMaterial studyMaterial);
+
     StudyMaterial selectStudyMaterialById(Long id);
+
     void updateStudyMaterial(StudyMaterial studyMaterial);
+
     void deleteStudyMaterial(Long id);
 
     List<StudyMaterial> selectAllStudyMaterials();
+
 
 }
