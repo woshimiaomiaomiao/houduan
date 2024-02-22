@@ -13,7 +13,7 @@
 
     <!-- 根据ID查询座位预约 -->
     <select id="selectSeatReservationById" parameterType="Long" resultType="SeatReservation">
-        SELECT * FROM SeatReservations WHERE seatId = #{id}
+        SELECT * FROM SeatReservations WHERE reservationId = #{id}
     </select>
 
     <!-- 更新座位预约 -->
