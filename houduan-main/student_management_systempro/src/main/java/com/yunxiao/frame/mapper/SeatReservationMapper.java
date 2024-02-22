@@ -12,5 +12,4 @@ public interface SeatReservationMapper {
     void deleteSeatReservation(Long id);
 
 
-
 }
